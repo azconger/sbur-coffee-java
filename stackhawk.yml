@@ -1,0 +1,45 @@
+# -- stackhawk configuration for sburcoffeejava --
+app:
+  # -- An applicationId obtained from the StackHawk platform. --
+  applicationId: 95c325f5-6317-43ff-9f65-79fc44272396 # (required)
+  # -- The environment for the applicationId defined in the StackHawk platform. --
+  env: Development # (required)
+  # -- The url of your application to scan --
+  host: http://localhost:8080 # (required)
+
+
+  openApiConf:
+    filePath: openapi.yml
+
+  # -- Customized Configuration for GraphQL/SOAP/OpenAPI, add here --
+  # Configuration Docs: https://docs.stackhawk.com/hawkscan/configuration/
+
+  # -- If Authenticated Scanning is needed, add here --
+  # Authenticated Scanning Docs: https://docs.stackhawk.com/hawkscan/authenticated-scanning.html
+  # Authenticated Scanning Repo: https://github.com/kaakaww/scan-configuration/tree/main/Authentication
+
+  # -- Help Section --
+  # Docs: https://docs.stackhawk.com/
+  # Contact Support: support@stackhawk.com
+#
+#hawk:
+#  spider:
+#    base: false # disable the default base spider; optional
+#    postmanConfig:
+#      filePath: postman_collection.json # file path of the Postman collection from the base directory
+
+hawk:
+  spider:
+    base: false # disable the default base spider; optional
+#    custom:
+#      command: "newman" # a command to execute a developer tool, with HTTP_PROXY support eg. "curl -x $HTTP_PROXY http://localhost:3000/admin"
+#      arguments:  # a list of strings that can be provided to the command or used instead of.
+#        - run
+#        - postman_collection.json
+#        - --environment
+#        - postman_environment.json
+#      environment: {} # map of environment variables present at command execution.
+#      credentials: {} # additional environment variables present at command execution and redacted from the logs.
+#      excludeParentEnvironment: false # An option to exclude the parent environment variables from execution in this command.
+#      logOutputToForeground: true # If enabled this will print the output of the command to the terminal foreground.
+#      workingDir: "" # The absolute path working directory these commands are run from. Defaults to the base directory HawkScan is run from.

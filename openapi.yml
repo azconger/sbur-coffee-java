@@ -1,0 +1,118 @@
+openapi: 3.0.0
+info:
+  title: SBUR Coffee App
+  version: 1.0.0
+servers:
+  - url: http://{{protocol}}
+tags:
+  - name: sbur-coffee Copy
+paths:
+  //{host}:{port}/coffees:
+    post:
+      tags:
+        - sbur-coffee Copy
+      summary: Coffees POST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Flimpity FlimFlam
+                id: '{{id}}'
+      parameters:
+        - name: host
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: port
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - sbur-coffee Copy
+      summary: Coffees GET
+      parameters:
+        - name: host
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: port
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  //{host}:{port}/coffees/{id}:
+    put:
+      tags:
+        - sbur-coffee Copy
+      summary: Coffees PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: berpidy boop
+                id: '{{id}}'
+      parameters:
+        - name: host
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: port
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - sbur-coffee Copy
+      summary: Coffees by ID
+      parameters:
+        - name: host
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: port
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+
