@@ -18,5 +18,7 @@ jobs:
         run: java -jar build/libs/SburCoffeeJava-0.0.1-SNAPSHOT.jar &
       - name: Run HawkScan
         uses: stackhawk/hawkscan-action@v2.0.2
+        env:
+          APP_ENV: GitHub Actions
         with:
           apiKey: ${{ secrets.HAWK_API_KEY }}
