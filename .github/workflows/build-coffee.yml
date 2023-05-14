@@ -12,4 +12,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+      - name: Build app
+        run: ./gradlew clean build
+      - name: Run app
+        run: java -jar build/libs/SburCoffeeJava-0.0.1-SNAPSHOT.jar &
+      - name: Run HawkScan
+        uses: stackhawk/hawkscan-action@v2.0.2
+        with:
+          apiKey: ${{ secrets.HAWK_API_KEY }}
